@@ -1,5 +1,5 @@
 
-${inputFile:path=Chapters/Chapter1/chapter1.pillar}$
+${inputFile:path=Chapters/Overview/Overview.pillar}$
 
 ${inputFile:path=Chapters/HiddenCorners/HiddenCorners.pillar}$
 
