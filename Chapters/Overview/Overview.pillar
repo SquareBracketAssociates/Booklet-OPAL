@@ -1,8 +1,39 @@
-!!Compilation
+!!Opal overview
 
-+Pillar logo>figures/pillar.png|width=30+
-Welcome to Pillar's little user-guide !!
+Stef said: I migrated the old old text of an old chapter in pre pillar format. 
 
-To write a book, you can create chapters and include them into ''book.pillar'' (see the ''book.pillar'' file)
-or directly edit the file.
-If you don't know ''Pillar'', check its documentation at *http://github.com/pillar-markup/pillar*.
+Jorge said: I think that the first thing that we need is a description of the Opal model, with the different classes that take part in it. Then we can explain how the compilation and decompilation work. And also explain the intermediate representation. Finally, how to extend and change the compilation process.
+
+
++Opal complete compilation process.>figures/fullProcess.pdf|width=30|label=opalprocess+
+
+Opal is the bytecode compiler for Pharo. Opal is a flexible, configurable and adaptable. The Opal compilation process, is built around 3 steps, from source code to the bytecode (see Figure *@opalprocess*).
+
+- Source code to abstract annotated syntax tree (see Figure *@sourcetoannotated*),
+- Abstract syntax tree to intermediary representation,
+- Intermediary representation to bytecode.
+
+!!! From Source to Annotated AST
+We know explain the process described by Figure *@sourcetoannotated*.
+
++From source to annotated AST.>file://figures/SourceToAnnotatedAST.pdf|width=30|label=sourcetoannotated+
+
+!!!! AST
+An Abstract Syntax Tree (AST) is a tree representation of the source code. The AST is easy to manipulate and scan it.
+
+The ASTs used by Opal come from refactoring engine. It uses ==RBParser== to generate ASTs, this step verifies the syntax. The structure of an AST is a simple tree. 
+
+Using the message ==parseExpression:==, we get an AST representing an expression.
+Evaluate and inspect the following expression (See Figure *@SimpleAtomicExpression*).
+
+[[[
+t := RBParser parseExpression: '1 + 2'.
+]]]
+
++Generated tree for  '1 + 2'.>file://figures/SimpleAtomicExpression.pdf|width=30|label=SimpleAtomicExpression+
+
+
+Let's try another example, inspect the following
+[[[
+RBParser parseExpression: 'one plus: two'.
+]]]
