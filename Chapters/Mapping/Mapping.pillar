@@ -137,7 +137,7 @@ If we select the first sequence (A), we see the corresponding IRSequence instanc
 
 These instructions corresponds to the first statement the sampleMethod, plus an additional goto: instruction.
 
-+The first sequence of instructions of the sampleMethod IR.>file://figures/IRMethod-structure-overview-1.pnhg|width=60|label=fig5+
++The first sequence of instructions of the sampleMethod IR.>file://figures/IRMethod-structure-overview-1.png|width=60|label=fig5+
 
 
 

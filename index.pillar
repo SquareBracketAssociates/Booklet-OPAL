@@ -1,6 +1,7 @@
 
 ${inputFile:path=Chapters/Overview/Overview.pillar}$
-
+${inputFile:path=Chapters/Overview/Compilation.pillar}$
+${inputFile:path=Chapters/Mapping/Mapping.pillar}$
 ${inputFile:path=Chapters/HiddenCorners/HiddenCorners.pillar}$
 
 
