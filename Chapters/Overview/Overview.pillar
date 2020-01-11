@@ -1,20 +1,24 @@
-!!Opal overview
 
-Stef said: I migrated the old old text of an old chapter in pre pillar format. 
+!! Opal overview
 
 Jorge said: I think that the first thing that we need is a description of the Opal model, with the different classes that take part in it. Then we can explain how the compilation and decompilation work. And also explain the intermediate representation. Finally, how to extend and change the compilation process.
 
 
 +Opal complete compilation process.>file://figures/fullProcess.pdf|width=60|label=opalprocess+
 
-Opal is the bytecode compiler for Pharo. Opal is a flexible, configurable and adaptable. The Opal compilation process, is built around 3 steps, from source code to the bytecode (see Figure *@opalprocess*).
+Opal is the bytecode compiler for Pharo.
 
-- Source code to abstract annotated syntax tree (see Figure *@sourcetoannotated*),
+Opal is a flexible, configurable and adaptable.
+The Opal compilation process, is built around 3 steps, from source code to the bytecode (see Figure *@opalprocess*): 
+- Source code to abstract annotated syntax tree (see Fig. *@sourcetoannotated*),
 - Abstract syntax tree to intermediary representation,
 - Intermediary representation to bytecode.
 
+This bytecode is transformed on the fly by the virtual machine in assembly. This last step is not 
+the scope of OPAL.
+
 !!! From Source to Annotated AST
-We know explain the process described by Figure *@sourcetoannotated*.
+We explain the process described by Fig. *@sourcetoannotated*.
 
 +From source to annotated AST.>file://figures/SourceToAnnotatedAST.pdf|width=60|label=sourcetoannotated+
 
