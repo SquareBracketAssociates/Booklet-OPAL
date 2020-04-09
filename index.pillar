@@ -1,7 +1,11 @@
 
+
 ${inputFile:path=Chapters/Overview/Overview.pillar}$
-${inputFile:path=Chapters/Overview/Compilation.pillar}$
+${inputFile:path=Chapters/IRBuilder/IR.pillar}$
+${inputFile:path=Chapters/AST/ast.pillar}$
+${inputFile:path=Chapters/ClosureCompilation/closures.pillar}$
+${inputFile:path=Chapters/ScopeAnalysis/scope-analysis.pillar}$
+${inputFile:path=Chapters/Translations/translations.pillar}$
+${inputFile:path=Chapters/Decompilation/decompilation.pillar}$
 ${inputFile:path=Chapters/Mapping/Mapping.pillar}$
 ${inputFile:path=Chapters/HiddenCorners/HiddenCorners.pillar}$
-
-
