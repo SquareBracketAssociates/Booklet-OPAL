@@ -134,3 +134,5 @@ Once we have an IR tree, we will transform the IR tree in a bytecode sequence. W
 +Intermediary Representation to Bytecode.>file://figures/IRToBytecode.pdf|width=60|label=IRToBytecode+
 
 TODO: EXPLAIN BETTER we need a code snippet
+
+${inputFile:path=Compilation.pillar}$
