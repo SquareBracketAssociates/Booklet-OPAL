@@ -1,0 +1,7 @@
+!! Closure Compilation
+!!! Roadmap
+Explains the closure model: (independent of the implementation)
+- copying temps
+- temps vectors, etc.
+
+Start with the old one and then add the new blocks closure.
