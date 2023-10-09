@@ -1,0 +1,1 @@
+## Translations### RoadmapTranslation from AST to IR, which explains the ASTTranslator.Probably uses information from the AST and scope analysis chapter.

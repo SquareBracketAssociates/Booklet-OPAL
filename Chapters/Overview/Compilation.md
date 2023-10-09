@@ -1,0 +1,1 @@
+### Compilation?#### Compiler NodesWe should show Node Hierarhcy#### Scope AnalysisI WANT TO UNDERSTAND SCOPE ANALYSE#### Closure compilationI WANT TO UNDERSTAND Closure compilation for REAL!I WANT TO UNDERSTANDcacheAST vs ASTI WANT TO UNDERSTAND#### Decompilation

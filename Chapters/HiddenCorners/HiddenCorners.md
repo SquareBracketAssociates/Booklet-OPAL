@@ -1,49 +1,8 @@
-!!Hidden Corners
-
-!!! Roadmap
-Special stuff and super technical hidden stuff:
-- Doit compilation
-- Extra Bindings
-- Optimization
-  - inlining
-  - must be boolean explanation
-- Compiler plugins
-- Compiler options
-- Compilation Context
-- Environments / ProductionEnvironment
-
-!!! Special objects
-
-Some  messages such  as the  ones of  Boolean are  not actually  sent. It  is then  impossible to  redefine such
-messages (which ones). This reason is that the compiler optimize them by inlining them. What is the problem
-
-!!! Supporting Inlined Messages
-
-There is an Opal modular extension to make sure that inlined messages can still be executed. (more explanation needed).
-
-[[[
-WHICH CLASS >> mustBeBoolean
+## Hidden Corners### RoadmapSpecial stuff and super technical hidden stuff:- Doit compilation- Extra Bindings- Optimization  - inlining  - must be boolean explanation- Compiler plugins- Compiler options- Compilation Context- Environments / ProductionEnvironment### Special objectsSome  messages such  as the  ones of  Boolean are  not actually  sent. It  is then  impossible to  redefine suchmessages \(which ones\). This reason is that the compiler optimize them by inlining them. What is the problem### Supporting Inlined MessagesThere is an Opal modular extension to make sure that inlined messages can still be executed. \(more explanation needed\).```WHICH CLASS >> mustBeBoolean
 	"Catches attempts to test truth of non-Booleans.  This message is sent from the VM.  The sending context is rewound to just before the jump causing this exception."
 	^ Boolean mustBeBooleanDeOptimize
 		ifTrue: [ self mustBeBooleanDeOptimizeIn: thisContext sender  ]
-		ifFalse: [ self mustBeBooleanIn: thisContext sender ]
-]]]
-
-To enable it, you can just execute
-
-[[[
-Boolean mustBeBooleanDeOptimize: false.
-]]]
-
-and it is turned off.
-
-Note that ==mustBeBooleanDeOptimizeIn:== is part of OpalCompiler, not the Kernel, so it does not take space there (the only thing in the Kernel is the switch to turn it on or off)
-
-
-In Opal, it is just this one method:
-
-[[[
-WHICH CLASS >> mustBeBooleanDeOptimizeIn: context
+		ifFalse: [ self mustBeBooleanIn: thisContext sender ]```To enable it, you can just execute```Boolean mustBeBooleanDeOptimize: false.```and it is turned off.Note that `mustBeBooleanDeOptimizeIn:` is part of OpalCompiler, not the Kernel, so it does not take space there \(the only thing in the Kernel is the switch to turn it on or off\)In Opal, it is just this one method:```WHICH CLASS >> mustBeBooleanDeOptimizeIn: context
 	"Permits to redefine methods inlined by compiler.
 	Take the ast node corresponding to the mustBeBoolean error, compile it on
 	the fly and executes it as a DoIt. Then resume the execution of the context."
@@ -69,5 +28,4 @@ WHICH CLASS >> mustBeBooleanDeOptimizeIn: context
 	ret := context receiver withArgs: {context} executeMethod: method.
   	"resume the context at the instruction following the send when returning from deoptimized code."
        context pc: sendNode irInstruction nextBytecodeOffsetAfterJump.
-	^ret.
-]]]
+	^ret.```

@@ -1,0 +1,1 @@
+## The IR Builder### Roadmap- Explain IR completely independently of everything else.- How to use it:	- Overview how to compile IR -> bytecode.	- How to decompile bytecode into IR	- IRBuilder for Bytecode editing
